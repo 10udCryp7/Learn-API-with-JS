@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Train: Data/APIs 1</title>
+</head>
+
+<body>
+    <img src="" , id="shoe" />
+    <script>
+        async function shoeResponse() {
+            // fetch request
+            response = await fetch("shoe.jpg");
+            // turn the body of what comeback in the HTTP response into blob
+            blob = await response.blob();
+            //convert blob to expect type for dom
+            document.getElementById("shoe").src = URL.createObjectURL(blob);
+        }
+
+        shoeResponse().then(response => {
+            console.log("yay")
+        })
+        .catch(error => {
+            console.log("error")
+        })
+
+        //  using then
+        //   console.log("fetching");
+        //   // fetch
+        //   fetch("shoe.jpg")
+        //     .then((response) => {
+        //       console.log(response);
+        //       return response.blob(); //convert image response data to blob
+        //     })
+        //     .then((blob) => {
+        //       console.log(blob);
+        //       document.getElementById('shoe').src = URL.createObjectURL(blob);
+        //     }).catch(error => {
+        //         console.log(error)
+        //     });
+    </script>
+</body>
+
+</html>
